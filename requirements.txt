@@ -1,0 +1,4 @@
+faster-whisper
+PyAudio
+numpy
+deep-translator
