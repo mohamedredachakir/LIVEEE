@@ -1,4 +1,10 @@
 import time
+import sys
+import os
+
+# Ensure src is in the python path
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 from src.audio_capture import AudioCapture
 from src.transcriber import Transcriber
 from src.translator import Translator
