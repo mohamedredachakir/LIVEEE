@@ -11,12 +11,35 @@ Perfect for live meetings on Microsoft Teams, Google Meet, or Zoom.
 - **Auto-Clearing Captions:** Subtitles disappear after 4 seconds of silence to keep your screen uncluttered.
 - **Dynamic Language Switching:** Change your target language on the fly directly from the UI.
 
+## Microsoft Teams / Windows Desktop Setup
+
+By default, the engine captures audio from your **default microphone**. If you want to translate what *other people* are saying in a Microsoft Teams meeting (i.e., capturing incoming system audio), you need to route your system audio to your microphone input.
+
+**Method 1: Windows Stereo Mix (Built-in)**
+1. Right-click the Sound icon in your Windows taskbar and select **Sound Settings**.
+2. Go to **More sound settings** -> **Recording** tab.
+3. Right-click anywhere and check **Show Disabled Devices**.
+4. Right-click **Stereo Mix**, select **Enable**, and then **Set as Default Device**.
+5. *Note: If Stereo Mix is not available, use Method 2.*
+
+**Method 2: Virtual Audio Cable (Recommended)**
+1. Download and install [VB-Cable (Virtual Audio Cable)](https://vb-audio.com/Cable/).
+2. Restart your computer if prompted.
+3. In **Windows Sound Settings**, set your Output (Playback) to `CABLE Input`.
+4. In **Windows Sound Settings**, set your Input (Recording) to `CABLE Output`.
+5. Open **Microsoft Teams**, go to Device Settings, and ensure the speaker is set to `CABLE Input`.
+6. Run the translator application. It will now "hear" everything happening in the meeting!
+
+*(To hear the meeting yourself while routing audio, open the properties of `CABLE Output` in Windows Recording settings, go to the "Listen" tab, check "Listen to this device", and select your real headphones/speakers).*
+
+---
+
 ## Prerequisites
 
 Before installing the Python packages, you may need to install audio and UI dependencies depending on your OS.
 
 ### Windows
-No additional system dependencies are usually required.
+No additional system dependencies are usually required. Python 3.10+ is recommended.
 
 ### macOS
 You will need `portaudio` for microphone capture:
